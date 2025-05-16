@@ -4,12 +4,12 @@ import { deleteTask, updateTaskStatus } from "../api/taskApi";
 function TaskList({ tasks, onTaskSelect, onDelete }) {
   const handleDelete = async (id) => {
     await deleteTask(id);
-    onDelete();
+    onDelete(); // update the task list
   };
 
   const handleUpdateStatus = async (id) => {
-    await updateTaskStatus(id, "IN_PROGRESS");
-    onDelete();
+    await updateTaskStatus(id, "IN_PROGRESS"); // new status
+    onDelete(); // update the task list
   };
 
   return (
